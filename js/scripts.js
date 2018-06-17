@@ -113,12 +113,6 @@ jQuery(document).ready(function() {
     	
 	});
 
-	$('#submit').bind('click', function(){
-		$('#alert').show();
-		setTimeout( 
-			function() {
-			  window.location.reload(true);
-			}, 2050);		}); 
 
 		
 });
