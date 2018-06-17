@@ -107,10 +107,19 @@ jQuery(document).ready(function() {
     		else {
     			$(this).removeClass('input-error');
     		}
-    	});
-    	// fields validation
+		});
+		// fields validation
+		
     	
-    });
-    
-    
+	});
+
+	$('#submit').bind('click', function(){
+		$('#alert').show();
+		setTimeout( 
+			function() {
+			  window.location.reload(true);
+			}, 2050);		}); 
+
+		
 });
+

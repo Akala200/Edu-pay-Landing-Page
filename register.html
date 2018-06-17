@@ -74,17 +74,13 @@
                     <div class="container" style="margin-top: 50px;">
                         <div class="row">
                             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
-                                <form role="form" action="" method="post" class="f1">
+                                <form role="form" id="form"  class="f1"  enctype="application/x-www-form-urlencoded">
         
                                     <h3>Register An Account</h3>
                                     <p>Fill in the form to get instant access</p>
                                     <div class="f1-steps">
                                         <div class="f1-progress">
                                             <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
-                                        </div>
-                                        <div class="f1-step active">
-                                            <div class="f1-step-icon"><i class="fa fa-user"></i></div>
-                                            <p>about</p>
                                         </div>
                                         <div class="f1-step">
                                             <div class="f1-step-icon"><i class="fa fa-key"></i></div>
@@ -97,54 +93,6 @@
                                             <p>address</p>
                                         </div>
                                     </div>
-                                    
-                                    <fieldset>
-                                        <h4>Tell us who you are:</h4>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="f1-first-name">First name</label>
-                                            <input type="text" name="f1-first-name" placeholder="First name..." class="f1-first-name form-control" id="f1-first-name">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label class="sr-only" for="f1-last-name">Last name</label>
-                                            <input type="text" name="f1-last-name" placeholder="Last name..." class="f1-last-name form-control" id="f1-last-name">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label class="sr-only" for="f1-email">Email</label>
-                                            <input type="email" name="f1-email" placeholder="Email..." class="f1-last-name form-control" id="f1-email">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="sr-only" for="f1-phone-number">Phone Number</label>
-                                            <input type="tel" name="f1-phone-number" placeholder="Phone Number..." class="f1-phone-number form-control" id="f1-phone-number">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="sr-only" for="f1-gender form-control" id="f1-gender">Gender</label>
-                                            <select class="selectpicker" type="text" name="f1-gender" class="f1-gender" style="border: none; background:  #F4F4F4;">
-                                                    <option>Gender</option>
-                                                    <option>Male</option>
-                                                    <option>Female</option>`
-                                            </select>                                        
-                                        </div>
-
-                                        <div class="form-group">
-                                                <label class="sr-only" for="f1-role" id="f1-role">Role</label>
-                                                <select class="selectpicker" type="text" name="f1-role" class="f1-role"  style="border: none; background:  #F4F4F4;">
-                                                        <option>Role</option>
-                                                        <option>Agent</option>
-                                                        <option>School Staff</option>
-                                                        <option>Propietor</option>
-                                                        <option>Other</option>
-                                                </select>                                        
-                                            </div>
-                                    
-                                
-                                        <div class="f1-buttons">
-                                            <button type="button" class="btn btn-next">Next</button>
-                                        </div>
-                                    </fieldset>
         
                                     <fieldset>
                                         <h4>Set up an account:</h4>
@@ -161,7 +109,12 @@
                                         <div class="form-group">
                                                 <label class="sr-only" for="f1-phone-number">Phone Number</label>
                                                 <input type="tel" name="f1-phone-number" placeholder="Phone Number..." class="f1-phone-number form-control" id="f1-phone-number">
-                                        </div>
+										</div>
+										
+										<div class="form-group">
+											<label class="sr-only" for="f1-phone-number">Agent's Id</label>
+											<input type="number" name="f1-phone-number" placeholder="Agent's Id..." class="f1-phone-number form-control" id="f1-agent-id">
+									</div>
 
                                         <div class="f1-buttons">
                                             <button type="button" class="btn btn-previous">Previous</button>
@@ -430,17 +383,17 @@
 
 
 <div class="form-group">
-        <label class="sr-only" for="f1-country">Country</label>
-        <input type="text" name="f1-country" placeholder="State..." class="f1-country form-control" id="f1-country">
+        <label class="sr-only" for="f1-country">States</label>
+        <input type="text" name="f1-states" placeholder="State..." class="f1-country form-control" id="f1-states">
     </div>
 
     <div class="form-group">
             <label class="sr-only" for="f1-city">City</label>
-            <input type="text" name="f1-city" placeholder="State..." class="f1-city form-control" id="f1-city">
+            <input type="text" name="f1-city" placeholder="City..." class="f1-city form-control" id="f1-city">
         </div>
                                         <div class="f1-buttons">
                                             <button type="button" class="btn btn-previous">Previous</button>
-                                            <button type="submit" class="btn btn-submit">Submit</button>
+                                            <button type="submit" class="btn btn-submit"  id="submit">Submit</button>
                                         </div>
                                     </fieldset>
                                 
@@ -453,9 +406,14 @@
             </div>
             <!-- /home wrapper -->
     
-        </header>
-        <!-- /Header -->
-       
+		</header>
+		 <!-- /Header -->
+		
+		 <div class="alert alert-success fade in container" id="alert">
+			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			<strong>Success!</strong> Your message has been sent successfully.
+		</div>   
+		  
 
 
         <!-- Javascript -->
@@ -463,7 +421,8 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.backstretch.min.js"></script>
         <script src="js/retina-1.1.0.min.js"></script>
-        <script src="js/scripts.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="js/post.js"></script>
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
