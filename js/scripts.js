@@ -118,7 +118,7 @@ jQuery(document).ready(function() {
 		setTimeout( 
 			function() {
 			  window.location.reload(true);
-			}, 50050);		}); 
+			}, 1500);		}); 
 
 });
 
