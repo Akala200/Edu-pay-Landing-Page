@@ -1,41 +1,20 @@
 $(document).ready(function(){
-    var contextroot = "http://edupay-api.azurewebsites.net/api/school/school/join"
+    var url = "http://edupay-api.azurewebsites.net/api/school/school/join"
     $("#form").submit(function(e){
         e.preventDefault();
         var form = $(this);
         var action = form.attr("action");
         var data = form.serializeArray();
 
-    
-
-        $.ajax({
-                    url: contextroot,
-                    type: 'POST',
-                    crossDomain: true,
-                    dataType: 'jsonp',
-                    crossOrigin: true,
-            async: true,
-            xhrFields: {
-               withCredentials: true
-            },
-            crossDomain: true,
-                    headers: { 
-                    "content-encoding": " gzip ",
-                    "content-type": "application/json; charset=utf-8",
-                    "server": " Kestrel",
-                    "vary": "Accept-Encoding",
-                    "x-powered-by":" ASP.NET",                                                   
-     },
-                    contentType: 'application/json',
-                    data: JSON.stringify(getFormData(data)),
-                    success: function(data){
-                        console.log("DATA POSTED SUCCESSFULLY");
-                        window.location.href = "home.html";
-                    },
-                    error: function( jqXhr, textStatus, errorThrown ){
-                        console.log( errorThrown );
-                    }
-        });
+        var request = new XMLHttpRequest();
+        var json_upload =  JSON.stringify(getFormData(data));
+        request.open('POST', url, true);
+        request.onreadystatechange = function() {if (request.readyState==4) alert("School Successfully created. An agent will contact you soon");};
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.setRequestHeader("Content-length", json_upload.length);
+        request.setRequestHeader("Connection", "close");
+        request.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        request.send(json_upload);
 });
 });
 
@@ -51,3 +30,4 @@ function getFormData(data) {
     return indexed_array;
  }
 
+ 
