@@ -49,7 +49,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
-    color: #868F9B;
+    color: #262422;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -261,6 +261,245 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .main-btn:hover, .white-btn:hover, .outline-btn:hover {
     opacity: 0.8;
 }
+
+ 
+.buttons  {
+	text-transform: none;
+    font-weight: 100;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px 30px;
+}
+
+.buttondow{
+    width: 220px;
+    background-color: #cb0076;
+    border-radius: 150px;
+    border: transparent;
+}
+
+.budwn {
+    width: 250px;
+    background-color: #cb0076;
+    border-radius: 150px;
+    border: transparent;
+    margin-left: 90px;
+  }
+
+
+@media screen and (min-width: 300px) and (max-width: 330px) {
+    .buttondow{
+        margin-left: -39px;
+        margin-bottom: 30px;
+    }
+
+    .budwn{
+        margin-left: 10px;
+        width: 220px;
+        margin-bottom: 20px;
+    }
+    #phone{
+        margin-left: 40px;
+        width: 200px !important;
+    }
+  }
+
+  @media screen and (min-width: 331px) and (max-width: 370px) {
+    .buttondow{
+        margin-left: -17px;
+        margin-bottom: 30px;
+    }
+
+    .budwn{
+        margin-left: 32px;
+        width: 220px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 40px;
+        width: 250px !important;
+    }
+  }
+
+  @media screen and (min-width: 371px) and (max-width: 400px) {
+    .buttondow{
+        margin-left: -6px;
+        margin-bottom: 30px;
+    }
+
+    .budwn{
+        margin-left: 44px;
+        width: 220px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 43px;
+        width: 250px !important;
+    }
+  }
+
+  @media screen and (min-width: 401px) and (max-width: 430px) {
+    .buttondow{
+        margin-left: 12px;
+        margin-bottom: 30px;
+    }
+
+    .budwn{
+        margin-left: 60px;
+        width: 220px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 65px;
+        width: 250px !important;
+    }
+  }
+
+  @media screen and (min-width: 431px) and (max-width: 500px) {
+    .buttondow{
+        margin-left: 28px;
+        margin-bottom: 30px;
+        width: 250px;
+    }
+
+    .budwn{
+        margin-left: 60px;
+        width: 290px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 95px;
+        width: 250px !important;
+    }
+  }
+
+  @media screen and (min-width: 501px) and (max-width: 610px) {
+    .buttondow{
+        margin-left: 35px;
+        margin-bottom: 30px;
+        width: 350px;
+    }
+
+    .budwn{
+        margin-left: 108px;
+        width: 320px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 130px;
+        width: 300px !important;
+    }
+  }
+
+  @media screen and (min-width: 620px) and (max-width: 700px) {
+    .buttondow {
+        margin-left: 56px;
+        margin-bottom: 30px;
+        width: 350px;
+    }
+    
+    .budwn{
+        margin-left: 126px;
+        width: 320px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 150px;
+        width: 300px !important;
+    }
+  }
+
+  @media screen and (min-width: 701px) and (max-width: 799px) {
+    .buttondow {
+        margin-left: 45px;
+        margin-bottom: 30px;
+        width: 500px;
+    }
+
+    .budwn{
+        margin-left: 118px;
+        width: 450px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 200px;
+        width: 300px !important;
+    }
+    
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 900px) {
+    .buttondow {
+        margin-left: 55px;
+        margin-bottom: 30px;
+        width: 500px;
+    }
+
+    .budwn{
+        margin-left: 96px;
+        width: 500px;
+        margin-bottom: 20px;
+    }
+
+    #phone{
+        margin-left: 200px;
+        width: 300px !important;
+    }
+  }
+
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    .buttondow {
+        margin-left: -55px;
+        margin-bottom: 30px;
+        width: 950px;
+    }
+
+    .budwn{
+        margin-left: 77px;
+        width: 750px;
+        margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .buttondow {
+        width: 220px;
+    }
+
+    .adj{
+        margin: 0px;
+        padding: 0px;
+        margin-top: 20px;
+    }
+
+    #btn2{
+        margin-left: 30px;
+    }
+
+  }
+
+  @media screen and (min-width: 1400px) {
+    
+    .adj{
+        margin: 0px;
+        padding: 0px;
+        margin-top: 55px;
+    }
+
+    #btn2{
+        margin-left: 30px;
+    }
+  }
+  
+  
 
 
 /*------------------------------------*\
@@ -674,7 +913,15 @@ header {
     color: #fff;
 }
 
-
+.hnav{
+    margin-top: 60px;
+    border-radius: 50px;
+    background: #FB0EB3;
+    opacity: 0.6;
+    color: white;
+    width: 180px;
+    height: 45px;
+}
 /*------------------------------------*\
 	
 \*------------------------------------*/
