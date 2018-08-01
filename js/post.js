@@ -9,7 +9,9 @@ $(document).ready(function(){
         var request = new XMLHttpRequest();
         var json_upload =  JSON.stringify(getFormData(data));
         request.open('POST', url, true);
-        request.onreadystatechange = function() {if (request.readyState==4) alert("School Successfully created. An agent will contact you soon");};
+        request.onreadystatechange = function() {if (this.readyState === 4 && this.status === 200) {
+            let response = JSON.parse(this.responseText);
+            renderPosts(response);    } alert("School Successfully created. An agent will contact you soon");};
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         request.setRequestHeader("Content-length", json_upload.length);
         request.setRequestHeader("Connection", "close");
@@ -30,4 +32,3 @@ function getFormData(data) {
     return indexed_array;
  }
 
- 
