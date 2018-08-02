@@ -4,7 +4,7 @@ $(document).ready(function(){
         
 
         jQuery.ajax({
-            url     : '/wp-json/my-namespace/v1/my-endpoint/',
+            url: 'http://edupay-api.azurewebsites.net/api/school/school/join',
             async   : true,
             dataType: 'json',
             type    : 'POST',
