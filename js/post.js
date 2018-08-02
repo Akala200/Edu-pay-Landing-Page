@@ -9,6 +9,8 @@ $(document).ready(function(){
             dataType: 'json',
             type    : 'POST',
             data    : jQuery("form").serialize(),
+            crossDomain: true,
+            contentType: 'application/json',
         }).done(function() {
             // Handle Success
             console.log('successful')
