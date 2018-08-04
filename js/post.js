@@ -16,9 +16,9 @@ $(document).ready(function(){
             } alert("School Successfully created. An agent will contact you soon");
     };
         
-        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.setRequestHeader("Content-type", "application/json");
         request.setRequestHeader("Content-length", json_upload.length);
-        request.setRequestHeader("Connection", "close");
+        request.withCredentials = false;
         request.send(json_upload);
 });
 });
