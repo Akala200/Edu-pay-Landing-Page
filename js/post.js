@@ -1,23 +1,30 @@
 $(document).ready(function(){
+    var url = "http://edupay-api.azurewebsites.net/api/school/school/join"
     $("#form").submit(function(e){
         e.preventDefault();
-        
+        var form = $(this);
+        var action = form.attr("action");
+        var data = form.serializeArray();
 
-        jQuery.ajax({
-            url: 'http://edupay-api.azurewebsites.net/api/school/school/join',
-            async   : true,
-            dataType: 'json',
-            type    : 'POST',
-            data    : jQuery("form").serialize(),
-            crossDomain: true,
-            contentType: 'application/json',
-        }).done(function() {
-            // Handle Success
-            console.log('successful')
-        }).fail(function(xhr, status, error) {
-           // Handle Failure
-           console.log('falsed')
-        });
+        var request = new XMLHttpRequest();
+        var json_upload =  JSON.stringify(getFormData(data));
+        request.open('POST', url, true);
+        request.onreadystatechange = function() {if (this.readyState === 4 && this.status === 200) {
+        let response = JSON.parse(this.responseText);
+        renderPosts(response);   
+        } alert("School Successfully created. An agent will contact you soon");
+};
+        request.withCredentials = false;
+        request.setRequestHeader( 'Content-Type', 'application/json' );
+        request.setRequestHeader('Access-Control-Allow-Origin: *');
+        request.onerror = function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log( 'The data failed to load ' );
+            console.log(JSON.stringify(XMLHttpRequest));
+            };
+            request.onload = function() {
+            console.log('SUCCESS!');
+            };
+        request.send(json_upload);
 });
 });
 
@@ -33,4 +40,18 @@ function getFormData(data) {
     return indexed_array;
  }
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
