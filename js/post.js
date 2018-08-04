@@ -16,7 +16,7 @@ $(document).ready(function(){
 };
         request.withCredentials = false;
         request.setRequestHeader( 'Content-Type', 'application/json' );
-        request.setRequestHeader('Access-Control-Allow-Origin: *');
+        request.setRequestHeader('Access-Control-Allow-Origin:', '*');
         request.onerror = function(XMLHttpRequest, textStatus, errorThrown) {
             console.log( 'The data failed to load ' );
             console.log(JSON.stringify(XMLHttpRequest));
