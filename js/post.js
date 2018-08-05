@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    var url = "http://edupay-api.azurewebsites.net/api/school/create-school"
     
     $("#form").submit(function(e){
         e.preventDefault();
@@ -9,16 +8,17 @@ $(document).ready(function(){
 
         var request = new XMLHttpRequest();
         var json_upload =  JSON.stringify(getFormData(data));
-        request.open('POST', url, true);
+        request.open('POST', 'http://edupay-api.azurewebsites.net/api/school/create-school', true);
+        request.setRequestHeader("Content-type", "application/json");
+        request.withCredentials = false;
+        request.send(json_upload);
         request.onreadystatechange = function() {if (this.readyState === 4 && this.status === 200) {
             let response = JSON.parse(this.responseText);
             renderPosts(response);   
             } alert("School Successfully created. An agent will contact you soon");
     };
         
-        request.setRequestHeader("Content-type", "application/json");
-        request.withCredentials = false;
-        request.send(json_upload);
+       
 });
 });
 
