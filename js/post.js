@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var url = "http://edupay-api.azurewebsites.net/api/school/school/join"
+    var url = "http://edupay-api.azurewebsites.net/api/school/create-school"
     
     $("#form").submit(function(e){
         e.preventDefault();
